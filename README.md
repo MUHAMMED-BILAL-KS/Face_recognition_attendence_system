@@ -21,3 +21,6 @@ Face_recognition_attendence_system Using Python Django
 
 # ATTENDENCE SHEET
 ![attendencesheet](https://github.com/MUHAMMED-BILAL-KS/Face_recognition_attendence_system/assets/112198429/ba8c614a-5f3b-449a-b5c3-aeae38f97f3d)
+
+DON'T COPY
+ONLY USE IT FOR STUDY PURPOSE
