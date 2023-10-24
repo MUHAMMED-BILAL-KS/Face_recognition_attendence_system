@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}index{% endblock title %}
+{% block content %}
+<div class="container emp-profile" style="margin-top: 20px;background-color:#222120a9;">
+    <div class="row">
+        <div class="col-md-3">
+            <img src="https://th.bing.com/th/id/OIP.XMk2zCp7rMtiqdKS3-tuswHaHa?pid=ImgDet&rs=1" alt="" width="50%">
+            <h6 class="p-1 text-center w-50" style="color:white">PICTURE</h6>
+
+        </div>
+        <div class="col-md-6">
+            <div class="profile-head">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <a href="{% url 'scan' %}" style="text-decoration: none;"><div class="row"><button class="btn btn-outline-light">RUN SCANNER</button></div></a>
+            <a href="{% url 'index' %}" style="text-decoration: none;"><div class="row"><button class="btn btn-outline-light" style="margin-top: 20px;">RETURN</button></div></a>
+        </div>
+    <hr style="margin: 30px 0;color:white;">
+    <div class="row">
+        <table class="table table-striped">
+            <thead class="table-dark text-center">
+                <tr>
+                    <td></td>
+                    <th>NAME</th>
+                    <th>PHONE</th>
+                    <th>STATUS</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                {% for person in profiles %}
+                <tr >
+                    <td><img class="imageprofile" src="/{{person.image}}" style="border-radius: 50%; height: 50px; width: 50px;"></td>
+                    <td>{{person.first_name}} {{person.last_name}}</td>
+                    <td>{{person.phone}}</td>
+                    {% if person.present %}
+                            <td>PRESENT</td>
+                            {% else %}
+                            <td>ABSENT</td>
+                            {% endif %}
+                    <td>
+                        <a href="{% url 'profilepresent' person.id %}">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM625 177L497 305c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L591 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'profileabsent' person.id %}">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col btnbackground">
+            <button class="btn btn-outline-danger cust_btn2">RESET</button>
+            <a href="{% url 'attendence' %}"><button class="btn btn-outline-primary cust_btn2">REFRESH</button></a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

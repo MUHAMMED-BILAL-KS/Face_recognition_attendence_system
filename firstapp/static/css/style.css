@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    /* background-color:rgba(0, 0, 0, 0.664); */
+    /* background-image: url('https://www.connectontech.com/wp-content/uploads/sites/38/2021/01/Eyes-on-AI.jpg'); */
+    background-image: url('https://simplified.com/siteimages/design/hero-image-dark-green.jpg');
+}
+.cust_btn{
+    margin-bottom: 4px;
+    width: auto;
+}
+.cust_btn2{
+    margin-left: 6px;
+    width: auto;
+}
+.emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background-color:#ffffffb7;
+    /* background-image: url('https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/6151d15bee4c2a8a11643ee7_Frame%206.jpg'); */
+    /* background-image: url('https://cdn.vectorstock.com/i/preview-1x/27/12/summer-gradient-background-with-leaf-shadow-vector-38832712.webp'); */
+}
+#nav-ALL-tab{
+    color: blue;
+}
+#nav-PRESENT-tab{
+    color: green;
+}
+#nav-ABSENT-tab{
+    color: red;
+}
+#nav-ALL-tab:focus{
+    color: black;
+}
+#nav-PRESENT-tab:focus{
+    color: black;
+}
+#nav-ABSENT-tab:focus{
+    color: black;
+}
+
+.imageprofile:hover{
+    transform: scale(2.5);
+    transition-duration: 1000ms;
+    border-radius: 5px;
+}
+
+.btnbackground{
+    background-color:#ffffffb7;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+}
+
+.formbackground{
+    background-color: #ffffffb7;
+    width: 100%;
+}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}Registration{% endblock title %}
+{% block content %}
+<div class="container emp-profile formbackground" style="margin-top: 20px;">
+
+    <div class="row">
+        <form method="POST" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <div class="row m-1">
+                    <div class="col">
+                        <label for="first_name" class="text-muted">First Name</label>
+                        {{form.first_name}}
+                    </div>
+                    <div class="col">
+                        <label for="last_name" class="text-muted">Last Name</label>
+                        {{form.last_name}}
+                    </div>
+                </div>
+                <div class="row m-1">
+                    <label for="phone" class="text-muted">Phone</label>
+                    {{form.phone}}
+                </div>
+                <div class="row m-1">
+                    <label for="email" class="text-muted">Email</label>
+                    {{form.email}}
+                </div>
+                <div class="row m-1">
+                    <label for="dob" class="text-muted">Date Of Birth</label>
+                    {{form.dob}}
+                </div>
+            </div>
+            <div class="col">
+                <div class="row m-1">
+                    <label for="dept" class="text-muted">Department</label>
+                    {{form.dept}}
+                </div>
+                <div class="row m-1">
+                    <label for="rollno" class="text-muted">Roll Number</label>
+                    {{form.rollno}}
+                </div>
+                <div class="row m-1">
+                    <label for="collage" class="text-muted">Collage</label>
+                    {{form.collage}}
+                </div>
+                <div class="row m-1">
+                    <label for="district" class="text-muted">District</label>
+                    {{form.district}}
+                </div>
+            </div>
+            <div class="col">
+                <img src="https://recfaces.com/wp-content/uploads/2020/11/960x0.png" class="rounded img-fluid m-2">
+                {{form.image}}
+            </div>
+            <input type='submit' class="btn btn-outline-dark m-1">
+        </form>
+    </div>
+    <div style="display: flex;justify-content: center;">
+        <a href="{% url 'profiles' %}"><button class="btn btn-outline-danger" style="width: auto;">BACK</button></a>
+    </div>
+    
+
+</div>
+{% endblock content %}

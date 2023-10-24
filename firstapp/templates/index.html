@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block title %}index{% endblock title %}
+{% block content %}
+<div class="container emp-profile" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-3">
+            <img src="https://th.bing.com/th/id/OIP.XMk2zCp7rMtiqdKS3-tuswHaHa?pid=ImgDet&rs=1" alt="" width="50%">
+            <h6 class="text-muted p-1 text-center w-50">PICTURE</h6>
+
+        </div>
+        <div class="col-md-6">
+            <div class="profile-head">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <a href="{% url 'attendence' %}" style="text-decoration: none;"><div class="row"><button class="btn btn-outline-dark">ATTENDENCE</button></div></a>
+            <a href="{% url 'profiles' %}" style="text-decoration: none;"><div class="row"><button class="btn btn-outline-dark" style="margin-top: 20px;">PROFILES</button></div></a>
+        </div>
+    <hr style="margin: 30px 0;">
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-ALL-tab" data-bs-toggle="tab" data-bs-target="#nav-ALL" type="button" role="tab" aria-controls="nav-ALL" aria-selected="true">ALL</button>
+            <button class="nav-link" id="nav-PRESENT-tab" data-bs-toggle="tab" data-bs-target="#nav-PRESENT" type="button" role="tab" aria-controls="nav-PRESENT" aria-selected="false">PRESENT</button>
+            <button class="nav-link" id="nav-ABSENT-tab" data-bs-toggle="tab" data-bs-target="#nav-ABSENT" type="button" role="tab" aria-controls="nav-ABSENT" aria-selected="false">ABSENT</button>
+        </div>
+    </nav>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="nav-ALL" role="tabpanel" aria-labelledby="nav-ALL-tab" tabindex="0">
+            <div class="row">
+                <table class="table table-striped">
+                    <thead class="table-dark text-center">
+                        <tr>
+                            <th>REGISTERED NAMES</th>
+                            <th>REGISTERED ON</th>
+                            <th>PRESENT</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        {% for person in profiles %}
+                        <tr>
+                            <td>{{person.first_name}} {{person.last_name}}</td>
+                            <td>{{person.time }}</td>
+                            {% if person.present %}
+                            <td>PRESENT</td>
+                            {% else %}
+                            <td>ABSENT</td>
+                            {% endif %}
+                        </tr>
+                        
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-PRESENT" role="tabpanel" aria-labelledby="nav-PRESENT-tab" tabindex="0">
+            <div class="row">
+                <table class="table table-striped">
+                    <thead class="table-dark text-center">
+                        <tr>
+                            <th>REGISTERED NAMES</th>
+                            <th>REGISTERED ON</th>
+                            <th>PRESENT</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        {% for person in pres %}
+                        <tr>
+                            <td>{{person.first_name}} {{person.last_name}}</td>
+                            <td>{{person.time }}</td>
+                            {% if person.present %}
+                            <td>PRESENT</td>
+                            {% else %}
+                            <td>ABSENT</td>
+                            {% endif %}
+                        </tr>
+                        
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-ABSENT" role="tabpanel" aria-labelledby="nav-ABSENT-tab" tabindex="0">
+            <table class="table table-striped">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>REGISTERED NAMES</th>
+                        <th>REGISTERED ON</th>
+                        <th>PRESENT</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {% for person in abs %}
+                    <tr>
+                        <td>{{person.first_name}} {{person.last_name}}</td>
+                        <td>{{person.time }}</td>
+                        {% if person.present %}
+                        <td>PRESENT</td>
+                        {% else %}
+                        <td>ABSENT</td>
+                        {% endif %}
+                    </tr>
+                    
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col btnbackground">
+            <a href="{% url 'reset1' %}"><button class="btn btn-outline-danger cust_btn2">RESET</button></a>
+            <a href="{% url 'index' %}"><button class="btn btn-outline-primary cust_btn2">REFRESH</button></a>
+            <a href="{% url 'save1' %}"><button class="btn btn-outline-success cust_btn2">SAVE AND DOWNLOAD</button></a>
+            <a href="{% url 'send_email' %}"><button class="btn btn-outline-danger cust_btn2">SEND MAIL</button></a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

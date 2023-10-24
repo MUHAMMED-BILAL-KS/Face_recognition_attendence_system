@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Saved Details{% endblock title %}
+{% block content %}
+    <table class="table table-striped">
+        <thead class="table-dark text-center">
+            <tr>
+                <th>REGISTERED NAMES</th>
+                <th>PRESENT TIME</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            {% for person in profiles %}
+            <tr>
+                <td>{{person.name}}</td>
+                <td>{{person.time}}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <center>
+    <div class="btnbackground">
+        <a href="{% url 'index' %}"><button class="btn btn-outline-danger">BACK</button></a>
+    </div>
+    </center>
+{% endblock content %}
