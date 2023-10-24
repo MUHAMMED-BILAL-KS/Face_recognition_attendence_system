@@ -1,4 +1,4 @@
-# Face_recognition_attendence_system(made By BILAL)
+# Face_recognition_attendence_system(made By Muhammed Bilal)
 Face_recognition_attendence_system Using Python Django
 
 # SCREENSHOTS
