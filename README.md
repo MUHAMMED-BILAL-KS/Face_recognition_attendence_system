@@ -1,6 +1,11 @@
 # Face_recognition_attendence_system(made By Muhammed Bilal)
 Face_recognition_attendence_system Using Python Django
 
+## Recognise The Faces And Compare it with Trained Faces
+## Automatic And Manual Attendence Marking
+## Sending Automatic Email To All Present Students With All Their Details
+## Downloading Attendence Sheet Of The Students
+
 Install the needful packages before running
 
 # SCREENSHOTS
